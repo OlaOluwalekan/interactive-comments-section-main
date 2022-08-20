@@ -1,0 +1,368 @@
+/* GOOGLE FONTS IMPORTATION */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+/* GLOBAL STYLES */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* overflow-x: visible; */
+}
+
+/* html {
+  scrollbar-width: none;
+} */
+
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:root {
+  --moderateBlue: hsl(238, 40%, 52%);
+  --softRed: hsl(358, 79%, 66%);
+  --lightGrayishBlue: hsl(239, 57%, 85%);
+  --paleRed: hsl(357, 100%, 86%);
+
+  --darkBlue: hsl(212, 24%, 26%);
+  --grayishBlue: hsl(211, 10%, 45%);
+  --lightGray: hsl(223, 19%, 93%);
+  --veryLightGray: hsl(228, 33%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+/* END OF GLOBAL STYLES */
+
+.container {
+  background-color: var(--veryLightGray);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* ADDING POST/COMMENT */
+.add-comment {
+  background-color: var(--white);
+  width: 90%;
+  max-width: 500px;
+  padding: 15px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 30px;
+  margin: auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-comment textarea {
+  resize: none;
+  border-radius: 5px;
+  border-color: var(--veryLightGray);
+  width: 100%;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.add-comment textarea:focus {
+  outline: 1.5px solid var(--grayishBlue);
+}
+
+.send-msg {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.send-msg img {
+  width: 30px;
+}
+
+.send-msg button {
+  text-transform: uppercase;
+  width: 60px;
+  padding: 7px 0;
+  font-size: 10px;
+  font-weight: 700;
+  background-color: var(--moderateBlue);
+  border: none;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+}
+
+.send-msg button:hover {
+  background-color: var(--lightGrayishBlue);
+}
+/* END OF ADDING POST/COMMENT */
+
+/* POST STYLES */
+.posts-container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 500px;
+  /* background-color: red; */
+  height: calc(100vh - 200px);
+  padding: 10px 20px 30px 20px;
+  overflow-y: scroll;
+  font-family: "Rubik", sans-serif;
+  scrollbar-width: none;
+}
+
+.user-post {
+  width: 100%;
+  background-color: var(--white);
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  float: right;
+}
+
+.reply-post {
+  width: 90%;
+}
+
+.user-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user-header img {
+  width: 30px;
+  margin-right: 15px;
+}
+
+.user-name {
+  margin-right: 5px;
+  max-width: 100px;
+  overflow-x: hidden;
+}
+
+.current-user {
+  margin-right: 15px;
+  color: var(--white);
+  font-size: 10px;
+  background-color: var(--moderateBlue);
+  /* display: none; */
+}
+
+.owner-class {
+  padding: 2px 7px;
+  display: flex;
+}
+
+.msg-time {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--grayishBlue);
+}
+
+.user-msg {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--grayishBlue);
+  margin: 10px 0;
+}
+
+.reply-to {
+  color: var(--moderateBlue);
+  font-weight: 900;
+}
+
+.user-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upvote {
+  display: flex;
+}
+
+.upvote button {
+  width: 25px;
+  height: 25px;
+  border: none;
+  color: var(--grayishBlue);
+  background-color: var(--lightGray);
+}
+
+.plusBtn {
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+}
+
+.minusBtn {
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.upvote-no {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  background-color: var(--lightGray);
+  color: var(--moderateBlue);
+}
+
+.delete-edit-reply {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: rebeccapurple; */
+  width: 120px;
+}
+
+.action-img1,
+.action-img2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.action-img1:hover,
+.action-img2:hover {
+  opacity: 0.3;
+}
+
+.action-img1 img,
+.action-img2 img {
+  margin-right: 5px;
+}
+
+.action-img1 p,
+.action-img2 p {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.action-img1 p {
+  color: var(--softRed);
+}
+
+.action-img2 p {
+  color: var(--moderateBlue);
+}
+/* END OF POST STYLES */
+
+/* DIALOG STYLES */
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: var(--darkBlue);
+  opacity: 0.5;
+  display: none;
+}
+
+.dialog {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background-color: var(--white);
+  width: 90%;
+  height: fit-content;
+  padding: 25px;
+  font-family: "Rubik", sans-serif;
+  border-radius: 10px;
+  transform: scale(0);
+  transition: all 300ms ease;
+}
+
+.dialog-head {
+  font-weight: 700;
+  color: var(--darkBlue);
+  margin: 10px 0;
+}
+
+.dialog-content {
+  font-size: 15px;
+  margin: 5px 0;
+  line-height: 22px;
+  font-weight: 500;
+  color: var(--grayishBlue);
+}
+
+.dialog-actions {
+  margin: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dialog-actions button {
+  padding: 12px 14px;
+  text-transform: uppercase;
+  font-weight: 900;
+  border-radius: 5px;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.btn1 {
+  background-color: var(--grayishBlue);
+}
+
+.btn2 {
+  background-color: var(--softRed);
+}
+/* END DIALOG STYLES */
+
+/* DESKTOP STYLES */
+@media screen and (min-width: 900px) {
+  .posts-container {
+    width: 70%;
+    max-width: 700px;
+  }
+
+  .user-post {
+    position: relative;
+    padding-left: 60px;
+  }
+
+  .delete-edit-reply {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .upvote {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .upvote button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .plusBtn {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .minusBtn {
+    border-radius: 0 0 10px 10px;
+  }
+}
+/* END OF DESKTOP STYLES */
